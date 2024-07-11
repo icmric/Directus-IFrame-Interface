@@ -1,6 +1,6 @@
 <template>
 	<div width="100%">
-		<iframe :src="url" title="MAP TEST" width="100%" height="600px"></iframe>
+		<iframe :src="url" title="IFrame" width="100%" height="600px"></iframe>
 	</div>
 </template>
 
