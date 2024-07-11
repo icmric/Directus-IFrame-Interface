@@ -1,6 +1,6 @@
 <template>
 	<div width="100%">
-		<iframe :src="url" title="IFrame" width="100%" height="600px"></iframe>
+		<iframe :src="url" title="IFrame" width="100%" :height="height + 'px'"></iframe>
 	</div>
 </template>
 
@@ -15,11 +15,14 @@ export default defineComponent({
             type: String,
             default: null,
         },
+        height: {
+            type: Number,
+            default: 600,
+        }
     },
 	
-    setup(props) {
+    setup(props) { 
         const values = inject("values"); // gets ID
-
         return {
             url: computed(() => render(props.url, values.value)),
         };

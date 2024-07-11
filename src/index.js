@@ -26,5 +26,15 @@ export default {
                 },
             },
         },
+        {
+            field: "height",
+            type: "number",
+            name: "Height",
+            meta: {
+                options: {
+                    placeholder: "600",
+                }
+            }
+        },
     ],
 };
