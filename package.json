@@ -1,6 +1,6 @@
 {
-	"name": "iframe-map-renderer",
-	"description": "Please enter a description for your extension",
+	"name": "directus-iframe-interface",
+	"description": "input URL and height, displays an iframe using the URL",
 	"icon": "extension",
 	"version": "1.0.0",
 	"keywords": [
