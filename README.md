@@ -7,6 +7,6 @@ Code is based on cah4a's action button: https://github.com/cah4a/directus-action
 
 <h2>Demo</h2>
 
-![iframe creation](https://raw.githubusercontent.com/icmric/Directus-IFrame-Interface/main/images/iframe-creation-UPDATED.jpg)
+![iframe creation](https://raw.githubusercontent.com/icmric/Directus-IFrame-Interface/main/images/iframe-creation-UPDATED.png)
 
 ![iframe demo](https://raw.githubusercontent.com/icmric/Directus-IFrame-Interface/main/images/iframe-demo.jpg)
