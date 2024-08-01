@@ -2,7 +2,7 @@
 	"name": "directus-iframe-interface",
 	"description": "input URL and height, displays an iframe using the URL",
 	"icon": "extension",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"keywords": [
 		"directus",
 		"directus-extension",
