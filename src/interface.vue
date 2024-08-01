@@ -1,5 +1,9 @@
 <template>
-	<iframe :src="url" class="iframe" title="IFrame" :height="height" :width="frameWidth"></iframe>
+    <div>
+        <p>{{ iframeTitle }}</p>
+        <br><p>{{ iframeClassName }}</p>
+        <iframe :src="url" :class=iframeClassName :title=iframeTitle :height="height" :width=frameWidth></iframe>
+    </div>
 </template>
 
 <script>
@@ -22,6 +26,21 @@ export default defineComponent({
             type: Number,
             default: 800,
         },
+        collection: {
+            type: String,
+            default: null,
+        },
+        field: {
+            type: String,
+            default: null,
+        }
+    },
+
+    data() {
+        return {
+            iframeTitle: this.field + " content",
+            iframeClassName: "iframeInterface " + this.collection + this.field,
+        };
     },
 	
     setup(props) { 

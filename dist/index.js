@@ -1,4 +1,4 @@
-import { defineComponent, inject, computed, openBlock, createElementBlock } from 'vue';
+import { defineComponent, inject, computed, openBlock, createElementBlock, createElementVNode, toDisplayString, normalizeClass, pushScopeId, popScopeId } from 'vue';
 
 /* micromustache v8.0.3 */
 /** @internal */
@@ -492,7 +492,7 @@ function render(template, scope, options) {
 
 var e=[],t=[];function n(n,r){if(n&&"undefined"!=typeof document){var a,s=!0===r.prepend?"prepend":"append",d=!0===r.singleTag,i="string"==typeof r.container?document.querySelector(r.container):document.getElementsByTagName("head")[0];if(d){var u=e.indexOf(i);-1===u&&(u=e.push(i)-1,t[u]={}),a=t[u]&&t[u][s]?t[u][s]:t[u][s]=c();}else a=c();65279===n.charCodeAt(0)&&(n=n.substring(1)),a.styleSheet?a.styleSheet.cssText+=n:a.appendChild(document.createTextNode(n));}function c(){var e=document.createElement("style");if(e.setAttribute("type","text/css"),r.attributes)for(var t=Object.keys(r.attributes),n=0;n<t.length;n++)e.setAttribute(t[n],r.attributes[t[n]]);var a="prepend"===s?"afterbegin":"beforeend";return i.insertAdjacentElement(a,e),e}}
 
-var css = "\n.iframe[data-v-938290dc] {\n        border: none;\n        border-radius: 6px;\n}\n";
+var css = "\n.iframe[data-v-d8588d22] {\r\n        border: none;\r\n        border-radius: 6px;\n}\r\n";
 n(css,{});
 
 var _export_sfc = (sfc, props) => {
@@ -519,6 +519,21 @@ const _sfc_main = defineComponent({
             type: Number,
             default: 800,
         },
+        collection: {
+            type: String,
+            default: null,
+        },
+        field: {
+            type: String,
+            default: null,
+        }
+    },
+
+    data() {
+        return {
+            iframeTitle: this.field + " content",
+            iframeClassName: "iframeInterface " + this.collection + this.field,
+        };
     },
 	
     setup(props) { 
@@ -528,18 +543,26 @@ const _sfc_main = defineComponent({
         };
     },
 });
-const _hoisted_1 = ["src", "height", "width"];
+
+const _withScopeId = n => (pushScopeId("data-v-d8588d22"),n=n(),popScopeId(),n);
+const _hoisted_1 = /*#__PURE__*/ _withScopeId(() => /*#__PURE__*/createElementVNode("br", null, null, -1 /* HOISTED */));
+const _hoisted_2 = ["src", "title", "height", "width"];
 
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (openBlock(), createElementBlock("iframe", {
-    src: _ctx.url,
-    class: "iframe",
-    title: "IFrame",
-    height: _ctx.height,
-    width: _ctx.frameWidth
-  }, null, 8 /* PROPS */, _hoisted_1))
+  return (openBlock(), createElementBlock("div", null, [
+    createElementVNode("p", null, toDisplayString(_ctx.iframeTitle), 1 /* TEXT */),
+    _hoisted_1,
+    createElementVNode("p", null, toDisplayString(_ctx.iframeClassName), 1 /* TEXT */),
+    createElementVNode("iframe", {
+      src: _ctx.url,
+      class: normalizeClass(_ctx.iframeClassName),
+      title: _ctx.iframeTitle,
+      height: _ctx.height,
+      width: _ctx.frameWidth
+    }, null, 10 /* CLASS, PROPS */, _hoisted_2)
+  ]))
 }
-var InterfaceComponent = /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',"data-v-938290dc"],['__file',"interface.vue"]]);
+var InterfaceComponent = /*#__PURE__*/_export_sfc(_sfc_main, [['render',_sfc_render],['__scopeId',"data-v-d8588d22"],['__file',"interface.vue"]]);
 
 var index = {
     id: "iframe",
