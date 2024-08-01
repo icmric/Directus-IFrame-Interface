@@ -36,5 +36,15 @@ export default {
                 }
             }
         },
+        {
+            field: "frameWidth",
+            type: "number",
+            name: "Width",
+            meta: {
+                options: {
+                    placeholder: "800",
+                }
+            }
+        }
     ],
 };

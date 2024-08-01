@@ -1,7 +1,5 @@
 <template>
-	<div width="100%">
-		<iframe :src="url" title="IFrame" width="100%" :height="height + 'px'"></iframe>
-	</div>
+	<iframe :src="url" class="iframe" title="IFrame" :height="height" :width="frameWidth"></iframe>
 </template>
 
 <script>
@@ -18,7 +16,12 @@ export default defineComponent({
         height: {
             type: Number,
             default: 600,
-        }
+        },
+        // 'width' seems to aready be used elsewhere??
+        frameWidth: {
+            type: Number,
+            default: 800,
+        },
     },
 	
     setup(props) { 
@@ -29,3 +32,10 @@ export default defineComponent({
     },
 });
 </script>
+
+<style scoped>
+    .iframe {
+        border: none;
+        border-radius: 6px;
+    }
+</style>
